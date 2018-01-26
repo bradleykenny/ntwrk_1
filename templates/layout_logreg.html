@@ -1,0 +1,37 @@
+{% from 'macros.html' import render_field %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ntwrk | Log In</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+	<link rel="icon" href="../static/img/favicon.ico" type="image/x-icon"/>
+	<link rel='stylesheet' type='text/css' href='../static/css/layout_logreg.css'>
+	<link rel="stylesheet" type="text/css" href="../static/css/normalize.css">
+	<script type='text/javascript' src='../static/js/jquery-3.1.0.min.js'></script>
+	<script type='text/javascript' src='../static/js/randomness.js'></script>
+</head>
+<body>
+	<div id='whole'>
+		<div class="outer">
+		<div class="middle">
+		<div class="inner">
+			<div id="card">
+				<a href="{{ url_for('index') }}"><h1 class='logo'>ntwrk</h1></a>
+				{% with messages = get_flashed_messages(with_categories=True) %}
+					{% if messages %}
+			        	{% for category, message in messages %}
+			            	<div class="notification {{ category }}">{{ message }}</div>
+			        	{% endfor %}
+					{% endif %}
+				{% endwith %}
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>

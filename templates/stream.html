@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block content %}
+{% for post in stream %}
+    <div class="postBox">
+	    <div class="post">
+	    	<article>
+		        <h2 class="postName">
+		            <a href="{{ url_for('stream', username = post.user.username) }}">{{ post.user.username }}</a>
+		        	<time data-time="{{ post.timestamp }}" class="timeOfPost" datetime="{{ post.timestamp.strftime('%d-%m-%Y %H:%M') }}">{{ post.timestamp.strftime('%I:%M %p') }}</time>
+		        	<time data-time="{{ post.timestamp }}" class="timeOfPost" datetime="{{ post.timestamp.strftime('%d-%m-%Y %H:%M') }}">[{{ post.timestamp.strftime('%d-%m-%Y') }}]</time>
+		        </h2>
+		        	<p>{{ post.content }}</p>
+		        <br>
+		        <a href="{{ url_for('view_post', post_id=post.id) }}" class="view">See more</a>
+		        {% if current_user.is_authenticated %}
+		            {% if post.user.username == current_user.username %}
+		            	<a href="{{ url_for('edit_post', post_id=post.id) }}" class="view edit">Edit</a>
+		                <a href="{{ url_for('delete_post', post_id=post.id) }}" class="view delete">Delete</a>
+		            {% endif %}
+		        {% endif %}
+		    </article>
+			<br><hr>
+		</div>
+	</div>
+{% endfor %}
+	<div class="postBox">
+	    <div class="post">
+	    	<article>
+		      	<p id="byMe"><b>network</b> made by Bradley Kenny</p>
+		    </article>
+			<br>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ntwrk</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+
+	<link rel="icon" href="../static/img/favicon.ico" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="../static/css/layout.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/normalize.css">
+	<script type='text/javascript' src='../static/js/jquery-3.1.0.min.js'></script>
+
+</head>
+<body>
+
+	<header>
+		<nav>
+			<a id="socialLogo" href="{{ url_for('stream') }}">ntwrk</a>
+			<span id="rightNavButtons">
+				{% if current_user.is_authenticated %}
+					<a class="navButton" href="{{url_for('stream', username = current_user.username)}}">{{current_user.username}}</a>
+				{% endif %}
+
+				{% if current_user.is_authenticated %}
+                <a href="{{ url_for('logout') }}" class="navButton" title="Log Out">Log Out</a>
+                {% else %}
+                <a href="{{ url_for('login') }}" class="navButton" title="Log In">Log In</a>
+                {% endif %}
+			</span>
+		</nav>
+	</header>
+
+	<div id="container">
+		<div id="postCentre">
+			<div class="postBox">
+				<div class="feedOptions">
+					<span class="feedTextLeft">
+						<a href="{{ url_for('all') }}">All</a>
+
+		            {% if current_user.is_authenticated %}
+		                <a href="{{ url_for('stream') }}">Following</a>
+		            </span>
+		            <span class="feedTextRight">
+		                <a href="{{ url_for('post') }}" class="new">Create New Post</a>
+		            {% endif %}
+		            </span>
+				</div>
+			</div>
+			{% with messages = get_flashed_messages(with_categories=True) %}
+				{% if messages %}
+			    	{% for category, message in messages %}
+			        	<div class="notification {{ category }}">{{ message }}</div>
+			    	{% endfor %}
+				{% endif %}
+			{% endwith %}
+			{% block content %}{% endblock %}
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+/*
+
+==========================================================
+
+[LAYOUT_LOGREG.HTML + LOGIN.HTML + REGISTER.HTML] STYLING SHEET FOR /R/SDD MAJOR PROJECT
+VERSION: 1.0
+
+----------------------------------------------------------
+
+THIS IS THE STYLESHEET FOR EVERYTHING YOU WILL SEE BEFORE
+LOGGING IN TO THE STREAM
+
+PAGES: LAYOUT_LOGREG, LOGIN, REGISTER
+
+==========================================================
+
+*/
+
+html {
+	font-family: 'Calibri';
+}
+a {
+	text-decoration: none;
+}
+
+#card {
+	padding: 7.5px 15px 14px 15px;
+
+	background-color: rgba(255, 255, 255, 1);
+	border-radius: 5px;
+
+	box-shadow: 0 0 25px #000000;
+	border-top: 2px solid rgba(0, 0, 0, 0.2);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+	font-size: 3.7em;
+	font-family: "Righteous", sans-serif;
+	color: rgba(255, 255, 255, 0.8);
+
+	margin: 12px auto 4px auto;
+	text-align: center;
+
+	transition: 0.25s ease;
+}
+.logo:hover {
+	color: rgba(255,255,255,1);
+}
+
+#card button {
+	font-size: 14px;
+	color: #FFFFFF;
+
+	width: 251px;
+
+	margin: 20px auto 0 auto;
+	padding: 10px 15px 10px 15px;
+	border-radius: 0px;
+
+	background-color: #000000;
+	border: none;
+	outline: none;
+
+	transition: 0.25s ease;
+
+	border-radius: 5px;
+}
+#card button:hover {
+	background-color: #889637;
+}
+
+.inputcenter {
+	margin: 0 auto 0 auto;
+}
+
+#card input[type="text"], input[type="password"] {
+	outline: none;
+	border: none;
+
+	height: 30px;
+	width: 235px;
+
+	background-color: rgba(255, 255, 255, 0);
+
+	margin: 10px auto 0 auto;
+	padding: 3.5px 8px 3.5px 8px;
+	border-radius: 0px;
+
+	font-size: 14px;
+	color: #2F4F4F;
+
+	transition: 0.5s ease;
+
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+#card input[type="text"]:hover, #card input[type="password"]:hover, #card input[type="text"]:focus, #card input[type="password"]:focus {
+	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#registerlink {
+	margin: auto;
+	margin-left: 50px;
+	font-size: 14px;
+
+	margin-top: 12px;
+
+	color: #545454;
+
+	cursor: pointer;
+}
+#registerlink:hover {
+	text-decoration: underline;
+}
+#registerlink a {
+	color: #545454;
+}
+
+
+#errorSignup {
+	background-color: white;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+}
+
+.notification {
+	width: 250px;
+	margin: 15px 0px -5px 0px;
+	text-align: center;
+	padding-top: 7.5px; padding-bottom: 7.5px;
+	border-radius: 5px;
+
+	font-family: sans-serif;
+	font-size: 14px;
+}
+.error {
+	background-color: rgba(255, 0, 0, 0.4);
+}
+.success {
+	background-color: rgba(0, 180, 0, 0.4);
+}

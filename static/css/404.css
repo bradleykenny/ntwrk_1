@@ -1,0 +1,86 @@
+/*
+
+==========================================================
+
+404.HTML STYLING SHEET FOR /R/SDD MAJOR PROJECT
+VERSION: 1.0
+
+----------------------------------------------------------
+
+I SEPARATED THIS SHEET FROM THE LAYOUT.CSS ONE AS THE 404
+PAGE LOOKS SO DIFFERENTLY AND I WANT THE VARIABLES TO BE
+AFFECTED SEPARATELY TO THE ONES IN LAYOUT.CSS
+
+PAGES: 404
+
+==========================================================
+
+*/
+
+.logo404 {
+	font-size: 5em;
+	font-family: "Bebas", sans-serif, 'Lovelo-LineBold';
+	color: rgba(255, 255, 255, 1);
+
+	margin: 0px auto;
+	text-align: center;
+
+	transition: 0.25s ease;
+}
+#text404 {
+	font-size: 7em;
+	margin-top: -30px;
+	margin-bottom: -30px;
+}
+a {
+	text-decoration: none;
+}
+
+h1 {
+	color: #fff;
+	text-align: center;
+	font-size: 36px;
+	font-family: "Desyrel";
+}
+
+#goback {
+	color: white;
+	position: absolute;
+	bottom: 30px;
+	margin-left: -95px;
+}
+
+
+/* THIS IS TO CENTRE THE TEXT; PLEASE LEAVE ALONE */
+
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: (0, 0, 0, 1);
+}
+
+.outer:after {
+	content: ' ';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	opacity: 1;
+	z-index: -1;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+		font-family: sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}

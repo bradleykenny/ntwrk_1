@@ -1,0 +1,26 @@
+{% from 'macros.html' import render_field %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Oooops</title>
+	<link rel="icon" href="../img/favicon.ico" type="image/x-icon"/> 
+	<script type='text/javascript' src='../static/js/jquery-3.1.0.min.js'></script>
+	<script type='text/javascript' src='../static/js/randomness.js'></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/normalize.css">
+	<link rel='stylesheet' type='text/css' href='../static/css/404.css'>
+</head>
+<body>
+	<div id='whole'>
+		<div class="outer">
+		<div class="middle">
+		<div class="inner"> 	
+			<h1 class='logo404' id='text404'>error 404</h1>
+			<h1>that page doesn't exist</h1>
+			<h1><a href="{{ url_for('stream') }}" id="goback">&larr; go back</a></h1>
+		</div>
+		</div>
+		</div>
+	</div>
+</body>
+</html>
